@@ -1,0 +1,23 @@
+.back-btn{
+    border-radius: 50%;
+    height: 50px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.back-fav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*background-color: aquamarine;*/
+    width: 21.5%;
+}
+
+.back-fav-search{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*background-color: blueviolet;*/
+    margin: 0rem 4rem 0rem 4rem;
+}
+
