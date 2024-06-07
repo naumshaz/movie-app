@@ -30,7 +30,7 @@ function Favourites() {
         setSearchResults([]);  // Clear search results if search term is empty
         return;
       }
-      const response = await axios.get(`http://localhost:6090/api/movies/search?title=${title}`);
+      const response = await axios.get(`https://movie-app-2gpd.onrender.com/api/movies/search?title=${title}`);
       setSearchResults(response.data);
     } catch (error) {
       console.error('Error searching movies:', error);
@@ -43,7 +43,7 @@ function Favourites() {
         setSearchResults([]);
         return;
       }
-      const response = await axios.get(`http://localhost:6090/api/movies/search?title=${title}`);
+      const response = await axios.get(`https://movie-app-2gpd.onrender.com/api/movies/search?title=${title}`);
       setSearchResults(response.data);
     } catch (error) {
       console.error('Error searching movies:', error);

@@ -24,7 +24,7 @@ function Home() {
 
   const fetchMovies = async () => {
     try {
-      const response = await axios.get('http://localhost:6090/api/movies');
+      const response = await axios.get('https://movie-app-2gpd.onrender.com/api/movies');
       setMovies(response.data);
     } catch (error) {
       console.error('Error fetching movies:', error);
@@ -37,7 +37,7 @@ function Home() {
         setSearchResults([]);  // Clear search results if search term is empty
         return;
       }
-      const response = await axios.get(`http://localhost:6090/api/movies/search?title=${title}`);
+      const response = await axios.get(`https://movie-app-2gpd.onrender.com/api/movies/search?title=${title}`);
       setSearchResults(response.data);
     } catch (error) {
       console.error('Error searching movies:', error);
