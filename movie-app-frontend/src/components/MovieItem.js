@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-function MovieItem({ movie }) {
+function MovieItem({ movie , onCheck }) {
+
   const [isFavourite, setIsFavourite] = useState(() => {
     const favMovies = JSON.parse(localStorage.getItem('favourites')) || [];
     return favMovies.some(favMovie => favMovie.id === movie.id);
@@ -16,6 +17,7 @@ function MovieItem({ movie }) {
       localStorage.setItem('favourites', JSON.stringify(favMovies));
     }
     setIsFavourite(!isFavourite);
+    onCheck(true)
   };
 
   return (

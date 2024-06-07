@@ -47,9 +47,6 @@
   z-index: 1;
 }
 
-.search-bar{
-  font-size: larger;
-}
 
 .fav-search-input{
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi_CVTmoL1ITHFxQkfLwvj93hcsgA1Olkhg&s');
@@ -111,5 +108,18 @@
   color: #929292;;
   border: none;
   background-color: white;
+  cursor: pointer;
 }
 
+.submit-button{
+  /*position: absolute;
+  left: 47.5%;
+  top: 5.5%;
+  font-size: medium;
+  font-family: 'DM Sans';
+  color: #929292;;
+  border: none;
+  background-color: white;
+  cursor: pointer;*/
+  display: none;
+}

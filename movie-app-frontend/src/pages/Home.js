@@ -58,7 +58,7 @@ function Home() {
             <Link to="/" className="navbar-brand">GET MOVIES</Link>
           </div>
           <div>
-            <SearchBar onSearch={handleSearch} setSearchTerm={setSearchTerm} />
+            <SearchBar onSearch={handleSearch} setSearchTerm={setSearchTerm} onClear={() => {setSearchResults('')}}/>
           </div>
         </div>
           <button className='custom-button' onClick={handleButtonClick}>
@@ -80,7 +80,7 @@ function Home() {
           <div id = 'search-result'>
             <h1 className='home-h1'>Search</h1>
             <p id='home-p'>{searchResults.length} result found</p>
-            <MovieList movies={searchResults} />
+            <MovieList movies={searchResults} isFavourite={() => {}}/>
           </div>
           </>
         ) : (
@@ -89,7 +89,7 @@ function Home() {
             <CarouselComponent />
           </div>
           <h1 className='home-h1'>Movies</h1>
-          <MovieList movies={movies} />
+          <MovieList movies={movies} isFavourite={() => {}} />
           </>
         )}
       </div>

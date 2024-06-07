@@ -12,6 +12,7 @@ function Favourites() {
   const [favourites, setFavourites] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [favCheck, setFavCheck] = useState(false);
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
@@ -21,7 +22,7 @@ function Favourites() {
   useEffect(() => {
     const favMovies = JSON.parse(localStorage.getItem('favourites')) || [];
     setFavourites(favMovies);
-  }, []);
+  }, [favCheck , favourites]);
 
   const handleSearch = async (title) => {
     try {
@@ -63,7 +64,7 @@ function Favourites() {
             <Link to="/" className="navbar-brand">GET MOVIES</Link>
           </div>
           <div>
-            <SearchBar onSearch={handleSearch} setSearchTerm={setSearchTerm} /> 
+            <SearchBar onSearch={handleSearch} setSearchTerm={setSearchTerm} onClear={() => {}}/> 
           </div> 
         </div>
           
@@ -84,7 +85,7 @@ function Favourites() {
             </div>
 
         </div>
-        <MovieList movies={favourites} />
+        <MovieList movies={favourites} isFavourite={() => {setFavCheck(true)}} />
       </div>
     </div>
   );

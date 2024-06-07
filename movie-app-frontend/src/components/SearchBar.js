@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function SearchBar({ onSearch }) {
+function SearchBar({ onSearch , onClear}) {
   const [searchTerm, setSearchTerm] = useState('');
   //const [movies, setMovies] = useState([]);
   //const navigate = useNavigate();
@@ -13,6 +13,7 @@ function SearchBar({ onSearch }) {
 
   const handleClearClick = () => {
     setSearchTerm('');
+    onClear(true)
   };
 
   const handleSubmit = (e) => {
@@ -30,9 +31,15 @@ function SearchBar({ onSearch }) {
           onChange={handleChange}
         />
         {searchTerm && (
-        <button className="clear-button" onClick={handleClearClick}>
-          X
+        <>
+        <button className="submit-button" onClick={handleSubmit}>
+        submit
         </button>
+        
+        <button className="clear-button" onClick={handleClearClick}>
+          &#x2715;
+        </button>
+        </>
         )}
       </div>
     </form>
